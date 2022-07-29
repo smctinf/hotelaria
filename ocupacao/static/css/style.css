@@ -1,0 +1,396 @@
+html, body{
+    height: 100%;
+    min-width: 370px;
+}
+#header .col{
+    /* border-bottom: 1px solid gray; */
+    display: flex;
+    height: 100px;
+    padding: 10px 10px;
+    position: relative;
+}
+#header .col img{
+    height: 100%;
+}
+#header .col #nav{
+    margin-left: auto;
+}
+#main .cards{
+    width: 100%; 
+    height: 500px;      
+    position: relative;
+}
+#main .cards{
+    width: 350px;
+    height: 90%;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+
+    background-image: url(../images/buttons/moda_intima.jpg);
+    background-position-x: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+}
+#main .cards #card-caledonia{
+    width: 350px;
+    height: 90%;
+    margin-right: 5px;
+   
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    background-color: aqua;
+    /* background-image: url(../images/buttons/moda_intima.jpg); */
+    background-position-x: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+}
+
+.cards  .card{
+    cursor: pointer;    
+}
+.mcard{
+    margin-right: auto;
+    margin-left: auto;
+}
+#main .cards .card-context{
+    border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.144);
+    height: 100%;
+    width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column  ;
+    color: rgb(0, 0, 0);
+    font-weight: bold;    
+    box-shadow: 5px 5px 5px rgb(80, 80, 80);    
+}
+#main .cards .card-context span{  
+    width: 100%;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 13pt;
+    text-align: center;
+    margin-bottom: 5px;  
+}
+#main .cards .card-context a{        
+    width: 100%;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    margin: auto  auto 0 auto;
+    font-size: 13pt;
+    text-align: center;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.lateral{
+    height: 100%;
+    width: 40%;    
+    /* border: 1px solid rgba(230, 229, 229, 0.521); */
+    border-radius: 5px;
+    position: relative;
+}
+ .rede-social{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+.rede-social img{
+    height: 80px;
+    margin: 20px 25px;
+}
+.hidden{
+    display: flex;
+}
+.show{
+    display: none;
+}
+footer{
+    width: 100%;
+    border-top: solid 1px black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 53px;
+}
+.btn-light{
+    background-color: white;
+}
+.btn-light:hover{
+    border: 1px solid white;
+    background-color: white;
+}
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+}
+
+#contato{
+    display: flex;
+    flex-direction: column;
+}
+#contato ul{
+    list-style: none;
+}
+
+@media (max-width: 1115px)
+{
+    #main .cards{
+        width: 100%; 
+        height: 400px;      
+        position: relative;
+    }
+    #main .cards #card-ponto{
+        width: 49%;
+    }
+    #main .cards #card-bus{
+        width: 49%;
+    }
+}
+
+#sobrepor{
+    position: fixed;
+    top: 200px;
+    left: 40%;
+}
+#mobile_show{
+    display: none;
+}
+#mobile .d-flex{
+    display: none !important;
+}
+
+@media (max-width: 850px){
+    #mobile_hidden{
+        display: none;
+    }
+    #mobile_show{
+        display: flex;
+        flex-direction: column;
+    }
+    #main .cards{
+        width: 100%; 
+        height: 280px;      
+        position: relative;
+    }
+    #main .cards #card-ponto{
+        width: 350px;
+    }
+    #main .cards #card-bus{
+        width: 350px;
+    }
+    #nav{
+        margin: auto;
+    }
+    #header .col{
+        justify-content: center;
+        height: auto;
+        flex-direction: column;
+    }
+    #logo{
+        display: flex;
+    }
+    #header .col a{
+        height: auto;
+        margin: auto;
+    }
+    #header .col img{  
+        margin: auto;      
+        width: 250px;
+        height: auto;
+    }
+    #contato{
+        flex-direction: column;
+    }
+
+    .hidden{
+        display: none;
+    }
+    .mobile{
+        display: flex !important;
+    }
+    .mobile #menu-cadastro #titulo-menu{
+        vertical-align: center;        
+        margin-top: 10px;        
+    }
+    .mobile #card-none{
+        background-color: transparent;
+        border: transparent;
+        box-shadow: none;
+    }   
+    .mobile #card-regiao{
+        background-image: url(../images/buttons/tres_picos.jpeg);        
+        margin: 10px 5px;
+    }
+    .mobile #card-hospedagem{        
+        background-image: url(../images/buttons/moda_intima.jpg);        
+        margin: 10px 5px;
+    }
+    .mobile #card-caledonia{   
+        /* width: 170px !important;      */
+        background-image: url(../images/buttons/caledonia.png);           
+        margin: 10px 5px;
+    }
+    .mobile .card{
+        border-radius: 5px;
+        background-size: cover;
+        min-width: 180px;
+        height: 100px;        
+        border: 1px solid rgba(128, 128, 128, 0.733);    
+        box-shadow: 3px 5px 5px rgba(80, 80, 80, 0.644);    
+        background-position-x: center;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        padding: 0;
+    }
+    .mobile .card .context{
+        height: 100%;
+        width: 100%;        
+        background-color: rgba(128, 128, 128, 0.233);          
+        display: flex;  
+        padding: 10px 10px;
+    }
+    .mobile .card .context div{
+        font-size: 10pt;
+        font-weight: bold;
+        color: rgba(54, 54, 54, 0.904);
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.877);
+        display: flex;        
+        border-radius: 5px;
+    }
+    .mobile .card .context div span{
+        word-break: break-all;
+        text-align: center;
+        margin: auto;
+    }
+    .mobile .titulo-outra-opcoes{
+        margin-top: 30px;
+    }
+    .mobile .submenu{
+        padding: 0px 0px 20px 0px;
+    }
+    .show{        
+        display: none;
+    }
+    .rede-social{
+        justify-content: center;
+    }
+
+}
+@media (max-width: 450px){
+    .hidden{
+        display: none;
+    }
+    .rede-social{
+        display: flex;
+        justify-content: center;
+    }
+    .rede-social img{
+        height: 50px;
+        margin: 10px 5px;
+    }
+    .show{        
+        display: flex;
+    }
+    .mobile #menu-cadastro #titulo-menu{
+        vertical-align: center;
+        text-align: center;
+    }
+    .mobile .titulo-outra-opcoes{
+        text-align: center;
+    }
+}
+.cards .card-context span{  
+    width: 100%;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 13pt;
+    text-align: center;
+    margin-bottom: 5px;  
+}
+.cards .card-context a{        
+    width: 100%;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    margin: auto  auto 0 auto;
+    font-size: 13pt;
+    text-align: center;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 170px;
+    background-color: rgba(41, 41, 41, 0.788);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    margin-top: -40px;
+    margin-left: -90px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(41, 41, 41, 0.788) transparent transparent transparent;
+}
+.mx-auto:hover .tooltiptext {
+    visibility: visible;
+  }
+
+#btn-reportar:hover{
+    cursor: pointer;
+    background-color: rgba(251, 255, 0, 0.699);
+
+}
+#dreportar{
+    display: none;
+    z-index: 200;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(68, 68, 68, 0.459);
+
+}
+#dreportar #report{    
+    background-color: white;
+    min-width: 300px;
+    margin: auto;
+    border-radius: 5px;
+    padding: 30px 40px;
+}
+.mobile{
+    display: none;
+}
+#menu_transporte_mobile{
+    padding-top: 20px;
+    display: none;    
+    z-index: 1000;
+}
+
+.dropdown-menu .marcar:hover{
+    background-color: rgba(128, 128, 128, 0.37) !important;
+}
