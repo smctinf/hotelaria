@@ -33,7 +33,9 @@ except:
 # Application definition
 
 INSTALLED_APPS = [
-     "bootstrap5",
+    'mathfilters',
+    "bootstrap5",
+    'fontawesomefree',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

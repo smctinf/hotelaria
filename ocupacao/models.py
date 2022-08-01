@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Regiao(models.Model):
     nome=models.CharField(max_length=150)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     dt_inclusao = models.DateTimeField(auto_now_add=True, verbose_name='Dt. Inclusão')
 
     def __str__(self):
@@ -17,9 +17,12 @@ class Regiao(models.Model):
 class Hospedagem(models.Model):
     regiao=models.ForeignKey(Regiao, on_delete=models.CASCADE, verbose_name='Região')
     nome=models.CharField(max_length=150)
-    telefone=models.CharField(max_length=150)
+    n_cadastur=models.IntegerField('Nº do Cadastur')
+    telefone=models.CharField(max_length=11)
     n_total_uh=models.IntegerField('Nº total de UH')
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    n_total_leitos=models.IntegerField('Nº total de Leitos')    
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     dt_inclusao = models.DateTimeField(auto_now_add=True, verbose_name='Dt. Inclusão')
 
     def __str__(self):
@@ -31,10 +34,11 @@ class Hospedagem(models.Model):
 class Ocupacao(models.Model):
     hospedagem=models.ForeignKey(Hospedagem, on_delete=models.CASCADE)
     n_uh_ocupados=models.IntegerField('Nº UH ocupados')    
+    n_leitos_ocupados=models.IntegerField('Nº Leitos ocupados')    
     obs=models.CharField(max_length=150, verbose_name='Observação')
     dt_1 = models.DateField('Data inicial')
     dt_2 = models.DateField('Data final')
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     dt_inclusao = models.DateTimeField(auto_now_add=True, verbose_name='Dt. Inclusão')
     
     def __str__(self):
@@ -42,3 +46,4 @@ class Ocupacao(models.Model):
 
     class Meta:
         ordering = ['hospedagem']
+

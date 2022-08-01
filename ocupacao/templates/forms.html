@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    {% load bootstrap5 %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Ocupação em Hotelaria</title>
-
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-</head>
-<body class="container">
+{% extends "template.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block main %}
+<div class="container">
     <div class="row">
         <div class="col d-flex flex-column">
             <div class="row">
@@ -20,7 +12,18 @@
                     </a>
                 </div>
             </div>
-            <form method="post" class="form col-8 mx-auto mt-5">
+            {% if messages %} 
+                {% for message in messages %}
+            <div class="row">
+                <div class="col">                    
+                    <div{% if message.tags %} class="bg-{{ message.tags }} text-white text-center mt-5 px-4 py-3"{% endif %}>
+                        <b>{{ message }}</b>
+                    </div>                
+                </div>
+            </div>
+            {% endfor %}                                                       
+            {% endif %}        
+            <form method="post" class="form col mt-5">
                 {% csrf_token %}
                 {% bootstrap_form form %}
                 {% buttons %}
@@ -29,5 +32,5 @@
             </form>
         </div>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

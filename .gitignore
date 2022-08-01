@@ -25,6 +25,7 @@ pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
+.envvars.yaml
 *.egg
 MANIFEST
 
@@ -107,6 +108,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+./venv/
 ENV/
 env.bak/
 venv.bak/

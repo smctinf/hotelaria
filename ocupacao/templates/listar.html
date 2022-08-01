@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    {% load bootstrap5 %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Ocupação em Hotelaria</title>
-
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-</head>
-<body class="container">
-    <div class="row">
+{% extends "template.html" %}
+{% load static %}
+{% block main %}
+    <div class="container">
+      <div class="row">
         <div class="col d-flex flex-column">
             <div class="row">
-                <div class="col d-flex pt-5 justify-content-end">
+                <div class="col d-flex pt-5 pb-4  justify-content-end">
                   <a href="/ocupacao" class="btn btn-primary me-1">
                     Cadastrar
                 </a>
@@ -29,8 +20,11 @@
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">nº UH ocupados</th>
-                            <th scope="col">nº total de UH</th>                            
+                            <th scope="col">Hospedagem</th>
+                            <th>Perido</th>
+                            <th scope="col">nº total de UH ocupadas</th>                            
+                            <th scope="col">nº total de UH</th>  
+                            
                           </tr>
                         </thead>
                         <tbody>
@@ -38,6 +32,9 @@
                           <tr>
                             <th scope="row">{{l.id}}</th>
                             <td>{{l.hospedagem.nome}}</td>
+                            <td>
+                              {{l.dt_1|date:"d/m/Y"}} até {{l.dt_2|date:"d/m/Y"}}
+                            </td>
                             <td>{{l.n_uh_ocupados}}</td>                            
                             <td>{{l.hospedagem.n_total_uh}}</td>                                                                                   
                           </tr>                          
@@ -48,5 +45,5 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+    </div>
+{% endblock %}

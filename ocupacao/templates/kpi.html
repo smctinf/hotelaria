@@ -1,0 +1,157 @@
+{% extends "template.html" %}
+{% load static %}
+{% load kpi %}
+{% load mathfilters %}
+{% block main %}
+<section class="w-100 h-100 pb-4">
+    <div class="w-100 p-4 d-flex justify-content-evenly align-content-around  flex-wrap ">        
+        <div class="kpi text-center border rounded">
+            <div class="kpi-title rounded">
+                <span class="px-5">DADOS DA HOTELARIA</span>            
+            </div>
+            <div class="d-flex flex-column">                
+                <form class="mx-auto py-3" method="POST">   
+                    <div class="d-flex">
+                        <div class="mx-auto pt-4">
+                        </div>
+                        <div class="d-flex">
+                            {% csrf_token %}
+                            <!-- <div>
+                                <label for="">Região:</label>
+                                <select name="regiao" id="" class="form-select">
+                                    <option value="" selected></option>
+                                    {% for r in regioes %}
+                                    <option value="{{r.id}}">{{r}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div> -->
+                            <!-- <div class="ms-4">
+                                <label for="">Hospedagem:</label>
+                                <select name="regiao" id="" class="form-select">
+                                    {% for hospedagem in regioes %}
+                                    <option value="{{r.id}}">{{r}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>                  -->
+                            <div class="ms-4">
+                                <label for="">Data inicial de inclusão:</label>
+                                <input class="form-control" type="date" name="dt_inclusao" id="">
+                            </div>
+                            <div class="ms-4">
+                                <label for="">Data final de inclusão:</label>
+                                <input class="form-control" type="date" name="dt_inclusao_f" id="">
+                            </div>
+                        </div>
+                        <!-- <div class="d-flex ml-5">
+                            <div class="me-2">
+                                <label for="">Data inicial da ocupação:</label>
+                                <input class="form-control" type="date" name="dt_chegada" id="">
+                            </div>
+                            <div class="ml-4">
+                                <label for="">Data final da ocupação:</label>
+                                <input class="form-control" type="date" name="dt_chegada_f" id="">
+                            </div>
+                        </div> -->
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100 mt-4">
+                    Filtrar
+                    </button>                   
+                </form>
+            </div>
+
+            <!-- <div class="w-100 d-flex pb-5 flex-wrap">
+                
+                <div class="col pt-4 d-flex flex-column">
+                    {% if filtro %}                                        
+                    <h4>De <b>{{dt_inicial}}</b> até <b>{{dt_final}}</b> <br>Há no total <b>{{total_viagens}}</b> viagens registradas:</h4>
+                    {% else %}
+                    <h4>Total de {{total_viagens}} viagens registradas:</h4>
+                    {% endif %}                                        
+                </div>                    
+            </div>             -->
+            {% if filtro %}
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Região</th>
+                    <th scope="col">Hospadagem</th>
+                    <th scope="col">Período</th>
+                    <th scope="col">Leitos Ocupados</th>
+                    <th scope="col">UH's Ocupadas</th>
+                    <th scope="col">% Ocupados</th>                    
+                    
+
+                  </tr>
+                </thead>
+                <tbody>
+                {% for o in ocupacoes %}                 
+                <tr style="border: 1px solid rgb(168, 168, 168);">
+                    <td style="border: 1px solid rgb(168, 168, 168);" class="bg-light">
+                        {{o.hospedagem.regiao}}
+                    </td>
+                    <td style="border: 1px solid rgb(168, 168, 168);" class="bg-light">
+                        {{o.hospedagem}}
+                    </td>
+                    <td style="border: 1px solid rgb(168, 168, 168);" scope="row">
+                        {{o.dt_1|date:"SHORT_DATE_FORMAT"}} até {{o.dt_2|date:"SHORT_DATE_FORMAT"}}
+                    </td>
+                    <td style="border: 1px solid rgb(168, 168, 168);">
+                        {{o.n_leitos_ocupados}}/{{o.hospedagem.n_total_leitos}}
+                    </td>
+                    <td style="border: 1px solid rgb(168, 168, 168);">
+                        {{o.n_uh_ocupados}}/{{o.hospedagem.n_total_uh}}
+                        </td>
+                    <td style="border: 1px solid rgb(168, 168, 168);">                        
+                        {{ o|uhPercent}}                        
+                    </td>                    
+                  </tr> 
+                {% endfor %}
+                <!-- <tr style="border: 1px solid rgb(168, 168, 168);">
+                    <td style="border: 1px solid white;" class="bg-light"></td>
+                    <th style="border: 1px solid white;" scope="row"></th>
+                    <td style="border: 1px solid white;"></td>
+                    <td style="border: 1px solid white;"></td>
+                    <td style="border: 1px solid white;"></td>
+                    <td style="border: 1px solid white;"></td>
+                    <td style="border: 1px solid white; border-right: 1px solid rgb(168, 168, 168);"></td>
+                    <td style="color: white; border: 1px solid rgb(168, 168, 168); background-color: #343A40; border-right-color: #343A40;">Total:</td>
+                    <td style="color: white; border: 1px solid rgb(168, 168, 168); background-color: #343A40;">{{soma}}</td>
+                    <td style=" border: 1px solid white;"></td>
+                  </tr>  -->
+                </tbody>
+              </table>
+            {% endif %}
+        </div>                
+    </div>    
+</section>
+<style>
+    .kpi{
+        margin: auto;
+        margin-bottom: 20px;
+        height: 100%;
+        width: 100%;
+    }
+    .kpi-title{
+        display: flex;
+        flex-wrap: wrap;
+        color: white;
+        vertical-align: center;
+        background-color: rgb(29, 28, 28) !important;
+        border: 1px solid black;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        box-shadow: 2px 4px 4px rgba(51, 50, 50, 0.123);   
+        text-align: center;           
+    }
+    .kpi-title span{        
+        margin: auto;
+        padding: 15px 0;
+    }
+    .border{        
+        border-color: rgba(0, 0, 0, 0.096) !important;
+        border-right-color: rgba(65, 64, 64, 0.151) !important;                
+        border-left-color: rgba(80, 79, 79, 0.13) !important;  
+        box-shadow: 2px 4px 4px rgba(51, 50, 50, 0.123);              
+    }
+</style>
+{% endblock %}
