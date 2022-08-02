@@ -9,8 +9,19 @@
             <div class="kpi-title rounded">
                 <span class="px-5">DADOS DA HOTELARIA</span>            
             </div>
+            {% if messages %} 
+            {% for message in messages %}
+        <div class="row">
+            <div class="col pt-3 pb-4 text-danger">                    
+                <div{% if message.tags %} class="bg-{{ message.tags }} text-center mt-5 px-4 py-3"{% endif %}>
+                    <b>{{ message }}</b>
+                </div>                
+            </div>
+        </div>
+        {% endfor %}                                                       
+        {% endif %}        
             <div class="d-flex flex-column">                
-                <form class="mx-auto py-3" method="POST">   
+                <form class="mx-auto py-3" method="POST">                   
                     <div class="d-flex">
                         <div class="mx-auto pt-4">
                         </div>

@@ -6,6 +6,6 @@ register = template.Library()
 def uhPercent(obj):
     print(obj.n_uh_ocupados)
     try:
-        return str(int((obj.n_uh_ocupados+obj.n_leitos_ocupados)/(obj.hospedagem.n_total_uh+obj.hospedagem.n_total_leitos)*100))+'%'
+        return str(int(((obj.n_uh_ocupados)/(obj.hospedagem.n_total_uh))*100))+'%'
     except (ValueError, ZeroDivisionError):
         return None

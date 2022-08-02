@@ -25,9 +25,12 @@ def kpi(request):
             regiao=request.POST['regiao']
         except:
             regiao=None
-
-        complexQuery=Q(dt_inclusao__range=[request.POST['dt_inclusao'], request.POST['dt_inclusao_f']])|Q(hospedagem_id=hospedagem_id)|Q(hospedagem__regiao_id=regiao)
-        ocupacao=Ocupacao.objects.filter(complexQuery).order_by('hospedagem__regiao_nome', 'hospedagem__nome')
+        try:
+            complexQuery=Q(dt_inclusao__range=[request.POST['dt_inclusao'], request.POST['dt_inclusao_f']])|Q(hospedagem_id=hospedagem_id)|Q(hospedagem__regiao_id=regiao)
+            ocupacao=Ocupacao.objects.filter(complexQuery).order_by('hospedagem__regiao_nome', 'hospedagem__nome')
+        except Exception as e:
+            messages.error(request, 'Erro ao gerar KPI ---> '+str(e))   
+            ocupacao=None         
         # ocupacao=Ocupacao.objects.filter(dt_1__range=[request.POST['dt_inclusao'], request.POST['dt_inclusao_f']])        
         context={
             'filtro': True,
