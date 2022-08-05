@@ -9,3 +9,7 @@ def uhPercent(obj):
         return str(int(((obj.n_uh_ocupados)/(obj.hospedagem.n_total_uh))*100))+'%'
     except (ValueError, ZeroDivisionError):
         return None
+
+@register.filter
+def maskCPF(obj):
+    return 'CPF'

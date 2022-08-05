@@ -26,7 +26,7 @@ def kpi(request):
         except:
             regiao=None
         try:
-            complexQuery=Q(dt_inclusao__range=[request.POST['dt_inclusao'], request.POST['dt_inclusao_f']])|Q(hospedagem_id=hospedagem_id)|Q(hospedagem__regiao_id=regiao)
+            complexQuery=Q(dt_1__range=[request.POST['dt'], request.POST['dt_f']], dt_2__range=[request.POST['dt'], request.POST['dt_f']])
             ocupacao=Ocupacao.objects.filter(complexQuery).order_by('hospedagem__regiao_nome', 'hospedagem__nome')
         except Exception as e:
             messages.error(request, 'Erro ao gerar KPI ---> '+str(e))   
