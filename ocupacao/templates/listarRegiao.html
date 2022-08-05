@@ -6,7 +6,7 @@
         <div class="col d-flex flex-column">
             <div class="row">
                 <div class="col d-flex pt-5 pb-4  justify-content-end">
-                  <a href="/ocupacao" class="btn btn-primary me-1">
+                  <a href="/regiao" class="btn btn-primary me-1">
                     Cadastrar
                 </a>
                     <a href="/" class="btn btn-primary">
@@ -20,10 +20,9 @@
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Hospedagem</th>
-                            <th>Período</th>
-                            <th scope="col">nº total de UH ocupadas</th>                            
-                            <th scope="col">nº total de UH</th>  
+                            <th scope="col">ID</th>
+                            <th>Região</th>
+
                             
                           </tr>
                         </thead>
@@ -31,12 +30,7 @@
                         {% for l in listar %}
                           <tr>
                             <th scope="row">{{l.id}}</th>
-                            <td>{{l.hospedagem.nome}}</td>
-                            <td>
-                              {{l.dt_1|date:"d/m/Y"}} até {{l.dt_2|date:"d/m/Y"}}
-                            </td>
-                            <td>{{l.n_uh_ocupados}}</td>                            
-                            <td>{{l.hospedagem.n_total_uh}}</td>                                                                                   
+                            <td>{{l.nome}}</td>                                                                                 
                           </tr>                          
                         {% endfor %}
                         </tbody>

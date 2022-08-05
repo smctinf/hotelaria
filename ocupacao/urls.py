@@ -5,7 +5,12 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('kpi/', views.kpi, name='kpi'),
     path('regiao/', views.regiao, name='regiao'),
-    path('hospedagem/', views.hospedagem, name='hospedagem'),
+    path('regiao/listar', views.listarRegiao, name='listagem_regiao'),
+    path('hospedagem/listar', views.hospedagem, name='hospedagem'),
+    path('hospedagem/editar/<id>', views.editarHospedagem, name='editar_hospedagem'),
+    path('hospedagem/', views.listarHospedagem, name='listagem_hospedagem'),
     path('ocupacao/', views.ocupacao, name='ocupacao'),
     path('ocupacao/listar', views.listarOcupacao, name='listagem_ocupacao')
+    
+    
 ]

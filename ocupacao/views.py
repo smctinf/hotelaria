@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 
 from ocupacao.forms import Form_Hospedagem, Form_Ocupacao, Form_Regiao
@@ -95,3 +96,26 @@ def listarOcupacao(request):
         'listar': Ocupacao.objects.all().order_by('hospedagem_id', 'hospedagem__nome')
     }
     return render(request, 'listar.html', context)
+def listarRegiao(request):
+    context={
+        'listar': Regiao.objects.all().order_by('id')
+    }
+    return render(request, 'listarRegiao.html', context)
+def listarHospedagem(request):
+    context={
+        'listar': Hospedagem.objects.all().order_by('id')
+    }
+    return render(request, 'listarHospedagem.html', context)
+def editarHospedagem(request, id):
+    hospedagem = Hospedagem.objects.get(id=id)
+    form=Form_Hospedagem(instance=hospedagem)
+    if request.method=='POST':
+        form=Form_Hospedagem(request.POST, instance=hospedagem)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Registro de ocupação realizada com sucesso no banco de dados!')
+    context={
+        'form': form,
+        'editar': Hospedagem.objects.get(id=id)
+    }
+    return render(request, 'editarHospedagem.html', context)

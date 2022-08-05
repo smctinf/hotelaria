@@ -20,10 +20,14 @@
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Hospedagem</th>
-                            <th>Período</th>
-                            <th scope="col">nº total de UH ocupadas</th>                            
-                            <th scope="col">nº total de UH</th>  
+                            <th scope="col">Nome</th>
+                            <th scope="col">Região</th>
+                            <th scope="col">Nº do Cadastur</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">Nº total de UH</th>                            
+                            <th scope="col">Nº total de leitos</th>
+                            <th scope="col text-center">Editar</th>
+
                             
                           </tr>
                         </thead>
@@ -31,12 +35,15 @@
                         {% for l in listar %}
                           <tr>
                             <th scope="row">{{l.id}}</th>
-                            <td>{{l.hospedagem.nome}}</td>
+                            <td>{{l.nome}}</td>
+                            <td>{{l.regiao.nome}}</td> 
                             <td>
-                              {{l.dt_1|date:"d/m/Y"}} até {{l.dt_2|date:"d/m/Y"}}
+                              {{l.n_cadastur}}
                             </td>
-                            <td>{{l.n_uh_ocupados}}</td>                            
-                            <td>{{l.hospedagem.n_total_uh}}</td>                                                                                   
+                            <td>{{l.telefone}}</td>
+                            <td>{{l.n_total_uh}}</td>                            
+                            <td>{{l.n_total_leitos}}</td>
+                            <td class="text-center"><a class="mx-auto" href="{% url 'editar_hospedagem' l.id %}"><i class="far fa-cog m-auto"></i></a></td>                                                                     
                           </tr>                          
                         {% endfor %}
                         </tbody>
