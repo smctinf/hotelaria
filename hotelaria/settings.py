@@ -11,6 +11,7 @@ env_vars=load_envars(BASE_DIR)
 db_name = env_vars['db_name']
 db_user = env_vars['db_user']
 db_passwd = env_vars['db_pw']
+db_host = env_vars['db_host']
 SECRET_KEY = env_vars['django_secret_key']
 debug_mode = env_vars['debug_mode']
 email_user = env_vars['email_sistema']
@@ -102,7 +103,7 @@ DATABASES = {
 
         'USER': db_user,
         'PASSWORD': db_passwd,
-        'HOST': '127.0.0.1',
+        'HOST': db_host,
     }
 }
 
