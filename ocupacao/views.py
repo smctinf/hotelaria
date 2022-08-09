@@ -119,3 +119,29 @@ def editarHospedagem(request, id):
         'editar': Hospedagem.objects.get(id=id)
     }
     return render(request, 'editarHospedagem.html', context)
+def editarRegiao(request, id):
+    regiao = Regiao.objects.get(id=id)
+    form=Form_Regiao(instance=regiao)
+    if request.method=='POST':
+        form=Form_Regiao(request.POST, instance=regiao)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Região editada com sucesso no banco de dados!')
+    context={
+        'form': form,
+        'editar': Regiao.objects.get(id=id)
+    }
+    return render(request, 'editarRegiao.html', context)
+def editarOcupacao(request, id):
+    ocupacao = Ocupacao.objects.get(id=id)
+    form=Form_Ocupacao(instance=ocupacao)
+    if request.method=='POST':
+        form=Form_Ocupacao(request.POST, instance=ocupacao)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Registro de Ocupação editada com sucesso no banco de dados!')
+    context={
+        'form': form,
+        'editar': Ocupacao.objects.get(id=id)
+    }
+    return render(request, 'editarOcupacao.html', context)

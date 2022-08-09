@@ -5,7 +5,10 @@
       <div class="row">
         <div class="col d-flex flex-column">
             <div class="row">
-                <div class="col d-flex pt-5 pb-4  justify-content-end">
+              <div class="col pt-4 pb-3 mt-3">
+                <h1>REGIÃO</h1>
+              </div>
+                <div class="col d-flex pt-5 pb-4  justify-content-end">                  
                   <a href="/regiao" class="btn btn-primary me-1">
                     Cadastrar
                 </a>
@@ -21,6 +24,7 @@
                           <tr>
                             <th scope="col">#</th>                            
                             <th>Região</th>
+                              <th>Editar</th>
 
                             
                           </tr>
@@ -29,7 +33,8 @@
                         {% for l in listar %}
                           <tr>
                             <th scope="row">{{l.id}}</th>
-                            <td>{{l.nome}}</td>                                                                                 
+                            <td>{{l.nome}}</td>
+                            <td><a  href="{% url 'editar_regiao' l.id %}"><i class="far fa-cog m-auto"></i></a></td>                                                                           
                           </tr>                          
                         {% endfor %}
                         </tbody>
