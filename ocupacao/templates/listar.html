@@ -5,6 +5,9 @@
       <div class="row">
         <div class="col d-flex flex-column">
             <div class="row">
+              <div class="col pt-4 pb-3 mt-3">
+                <h1>OCUPAÇÃO</h1>
+              </div>
                 <div class="col d-flex pt-5 pb-4  justify-content-end">
                   <a href="/ocupacao" class="btn btn-primary me-1">
                     Cadastrar
@@ -24,7 +27,7 @@
                             <th>Período</th>
                             <th scope="col">nº total de UH ocupadas</th>                            
                             <th scope="col">nº total de UH</th>  
-                            
+                            <th scope="col">Editar</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -36,7 +39,8 @@
                               {{l.dt_1|date:"d/m/Y"}} até {{l.dt_2|date:"d/m/Y"}}
                             </td>
                             <td>{{l.n_uh_ocupados}}</td>                            
-                            <td>{{l.hospedagem.n_total_uh}}</td>                                                                                   
+                            <td>{{l.hospedagem.n_total_uh}}</td>
+                            <td><a  href="{% url 'editar_ocupacao' l.id %}"><i class="far fa-cog m-auto"></i></a></td>
                           </tr>                          
                         {% endfor %}
                         </tbody>

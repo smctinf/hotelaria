@@ -6,11 +6,13 @@ urlpatterns = [
     path('kpi/', views.kpi, name='kpi'),
     path('regiao/', views.regiao, name='regiao'),
     path('regiao/listar', views.listarRegiao, name='listagem_regiao'),
+    path('regiao/editar/<id>', views.editarRegiao, name='editar_regiao'),
     path('hospedagem/', views.hospedagem, name='hospedagem'),
     path('hospedagem/editar/<id>', views.editarHospedagem, name='editar_hospedagem'),
     path('hospedagem/listar', views.listarHospedagem, name='listagem_hospedagem'),
     path('ocupacao/', views.ocupacao, name='ocupacao'),
-    path('ocupacao/listar', views.listarOcupacao, name='listagem_ocupacao')
+    path('ocupacao/listar', views.listarOcupacao, name='listagem_ocupacao'),
+    path('ocupacao/editar/<id>', views.editarOcupacao, name='editar_ocupacao')
     
     
 ]
