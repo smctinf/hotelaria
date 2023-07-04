@@ -13,6 +13,4 @@ urlpatterns = [
     path('ocupacao/', views.ocupacao, name='ocupacao'),
     path('ocupacao/listar', views.listarOcupacao, name='listagem_ocupacao'),
     path('ocupacao/editar/<id>', views.editarOcupacao, name='editar_ocupacao')
-    
-    
 ]

@@ -10,7 +10,7 @@ from django.db.models import Q
 
 from hotelaria.decorators import membro_secretaria_required
 
-# Create your views here.
+
 @membro_secretaria_required
 def index(request):
     return render(request, 'index.html')

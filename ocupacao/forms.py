@@ -14,7 +14,7 @@ class Form_Regiao(ModelForm):
 
 
 class Form_Hospedagem(ModelForm):
-    
+      
     class Meta:
         model = Hospedagem
         widgets={
