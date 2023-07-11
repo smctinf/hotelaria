@@ -91,15 +91,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hotelaria.wsgi.application'
 
-
 if sqlite_mode:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(PROJECT_ROOT, 'hotelaria.db'),
+            'NAME': os.path.join(BASE_DIR, 'hotelaria.db'),
         }
     }
-
 else:
     DATABASES = {
         'default': {

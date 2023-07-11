@@ -1,5 +1,8 @@
 {% extends "template.html" %}
 {% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static '/css/kpi.css'%}">
+{% endblock %}
 {% load kpi %}
 {% load mathfilters %}
 {% block main %}
@@ -43,7 +46,7 @@
                                     <option value="{{r.id}}">{{r}}</option>
                                     {% endfor %}
                                 </select>
-                            </div>                  -->
+                            </div> -->
                             <div class="ms-4">
                                 <label for="">Período inicial:</label>
                                 <input class="form-control" type="date" name="dt" id="">
@@ -90,8 +93,6 @@
                     <th scope="col">Leitos Ocupados</th>
                     <th scope="col">UH's Ocupadas</th>
                     <th scope="col">% Ocupados</th>                    
-                    
-
                   </tr>
                 </thead>
                 <tbody>

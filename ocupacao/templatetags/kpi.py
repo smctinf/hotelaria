@@ -4,7 +4,7 @@ register = template.Library()
 
 @register.filter
 def uhPercent(obj):
-    print(obj.n_uh_ocupados)
+    print(obj.hospedagem.n_total_uh)
     try:
         return str(int(((obj.n_uh_ocupados)/(obj.hospedagem.n_total_uh))*100))+'%'
     except (ValueError, ZeroDivisionError):
