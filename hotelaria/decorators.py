@@ -12,7 +12,7 @@ def membro_secretaria_required(view_func):
         if  Group.objects.get(name='Secretaria de Turismo') in request.user.groups.all() or request.user.is_superuser:
             return view_func(request, *args, **kwargs)
         else:
-            return redirect()
+            return redirect('login/')
     return wrap
     
 def membro_fiscais_required(view_func):    
