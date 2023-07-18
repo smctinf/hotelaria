@@ -5,6 +5,6 @@ app_name = 'autenticacao'
 urlpatterns = [
     path('login/', views.login, name='login'),
 
-    path('password_reset', views.password_reset, name='password_reset'),
-    path()
+    #path('password_reset', views.password_reset, name='password_reset'),
+    #path('cadastrar', views.cadastrar, name='cadastrar'),
 ]

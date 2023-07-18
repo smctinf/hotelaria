@@ -12,20 +12,13 @@
     <main>
         <h1>LOGIN</h1>
         <form id="form-login">
-                {% if error %}
-                    <div>{% msg %}</div>
-                {% endif%}
-
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username" maxlength="150" autofocus required>
-                <label for="password">Senha</label>
-                <input type="password" name="password" id="password" mixlength="8" required>
-                <button>Entrar</button>
+                {{form}} 
         </form>
     </main>
-    <a href="{% url 'autenticacao:password_reset%}">Esqueci minha senha</a>
-    <a href="{% url 'autenticacao:cadastrar'%}">Quero me cadastrar</a>
+    {% comment %}<a href="{% url 'autenticacao:password_reset'%}">Esqueci minha senha</a>
+    <a href="{% url 'autenticacao:cadastrar'%}">Quero me cadastrar</a>{% endcomment %}
 </body>
-<script src="{% static 'login.js'%}"></script>
+<script type="module" src="{% static 'js/functionsUtil.js'%}"></script>
+<script type="module" src="{% static 'js/login.js'%}"></script>
 
 </html>
