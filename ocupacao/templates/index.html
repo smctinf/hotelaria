@@ -8,17 +8,17 @@
 </div>
 <div id="newcards" class="row hidden">
     <div class="col d-flex flex-wrap ms-4">
-        <a id="regiao" href="/regiao/listar" class="btn d-flex me-auto" style="background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/04/bd/1d/1a/nova-friburgo.jpg);">
+        <a id="regiao" href="{% url 'listagem_regiao' %}" class="btn d-flex me-auto" style="background-image: url(https://media-cdn.tripadvisor.com/media/photo-s/04/bd/1d/1a/nova-friburgo.jpg);">
             <div class="w-100 h-100 d-flex flex-column">
                 <span>Regiões</span>
             </div>
         </a>
-        <a id="hospedagem" href="/hospedagem/listar" class="btn d-flex mx-auto" style="background-image: url(https://www.queroviajarmais.com/wp-content/uploads/2022/02/pousada-friburgo-Recanto-das-flores.jpg);">
+        <a id="hospedagem" href="{% url 'listagem_hospedagem'%}" class="btn d-flex mx-auto" style="background-image: url(https://www.queroviajarmais.com/wp-content/uploads/2022/02/pousada-friburgo-Recanto-das-flores.jpg);">
             <div class="w-100 h-100 d-flex flex-column">
                 <span>Meios de Hospedagem</span>   
             </div>
         </a>
-        <a id="listarocupacao" href="/ocupacao/listar" class="btn d-flex m-auto" style="background-image: url(https://vemvoar.voeazul.com.br/wp-content/uploads/2019/05/5-cuidados-ao-realizar-sua-reserva-de-hotel-1024x684.jpeg);">
+        <a id="listarocupacao" href="{% url 'listagem_ocupacao' %}" class="btn d-flex m-auto" style="background-image: url(https://vemvoar.voeazul.com.br/wp-content/uploads/2019/05/5-cuidados-ao-realizar-sua-reserva-de-hotel-1024x684.jpeg);">
             <div class="w-100 h-100 d-flex flex-column">
                 <span>Taxa de Ocupação</span>
             </div>

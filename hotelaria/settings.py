@@ -36,7 +36,7 @@ except:
 
 INSTALLED_APPS = [
     'mathfilters',
-    "bootstrap5",
+    'bootstrap5',
     'fontawesomefree',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Created Apps
     'ocupacao',
+    'contas',
 ]
 
 MIDDLEWARE = [

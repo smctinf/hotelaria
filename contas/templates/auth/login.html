@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <title>Login</title>
+</head>
+
+<body>
+    <main>
+        <h1>LOGIN</h1>
+        <h2>Credenciais</h2>
+        {% if error %}
+        <span id="error-msg">Seus credenciais estão incorretos</span>
+        {% endif %}
+        <form id="form-login" action="." method="post">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required autofocus>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </main>
+    {% comment %}<a href="{% url 'autenticacao:password_reset'%}">Esqueci minha senha</a>
+    <a href="{% url 'autenticacao:cadastrar'%}">Quero me cadastrar</a>{% endcomment %}
+</body>
+{%comment%}<script type="module" src="{% static 'js/functionsUtil.js'%}"></script>
+<script type="module" src="{% static 'js/login.js'%}"></script>{%endcomment%}
+
+</html>

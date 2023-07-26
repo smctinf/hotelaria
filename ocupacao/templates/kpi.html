@@ -10,7 +10,7 @@
     <div class="w-100 p-4 d-flex justify-content-evenly align-content-around  flex-wrap ">        
         <div class="kpi text-center border rounded">
             <div class="kpi-title rounded">
-                <span class="px-5">DADOS DA HOTELARIA</span>            
+                <span class="px-5">DADOS DA HOTELARIA</span>
             </div>
             {% if messages %} 
             {% for message in messages %}
@@ -49,23 +49,13 @@
                             </div> -->
                             <div class="ms-4">
                                 <label for="">Período inicial:</label>
-                                <input class="form-control" type="date" name="dt" id="">
+                                <input class="form-control" type="date" name="dt">
                             </div>
                             <div class="ms-4">
                                 <label for="">Período final:</label>
-                                <input class="form-control" type="date" name="dt_f" id="">
+                                <input class="form-control" type="date" name="dt_f">
                             </div>
                         </div>
-                        <!-- <div class="d-flex ml-5">
-                            <div class="me-2">
-                                <label for="">Data inicial da ocupação:</label>
-                                <input class="form-control" type="date" name="dt_chegada" id="">
-                            </div>
-                            <div class="ml-4">
-                                <label for="">Data final da ocupação:</label>
-                                <input class="form-control" type="date" name="dt_chegada_f" id="">
-                            </div>
-                        </div> -->
                     </div>
                     <button type="submit" class="btn btn-dark w-100 mt-4">
                     Filtrar
