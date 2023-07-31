@@ -75,7 +75,7 @@ html, body{
 #main .cards .card-context span{  
     width: 100%;
     border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: sans-serif;
     text-transform: uppercase;
     font-size: 13pt;
     text-align: center;
@@ -84,7 +84,7 @@ html, body{
 #main .cards .card-context a{        
     width: 100%;
     border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: sans-serif;
     text-transform: uppercase;
     margin: auto  auto 0 auto;
     font-size: 13pt;
@@ -319,7 +319,7 @@ footer{
 .cards .card-context span{  
     width: 100%;
     border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: sans-serif;
     text-transform: uppercase;
     font-size: 13pt;
     text-align: center;
@@ -328,7 +328,7 @@ footer{
 .cards .card-context a{        
     width: 100%;
     border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: sans-serif;
     text-transform: uppercase;
     margin: auto  auto 0 auto;
     font-size: 13pt;

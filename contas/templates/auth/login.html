@@ -5,32 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon">
     <title>Login</title>
 </head>
 
 <body>
     <main>
+        <div id="bg-image"></div>
         <section id="container-login">
             <img src="{% static 'images/logo.png'%}" alt="Logo da PMNF">
             <hr>
-            <h1>LOGIN</h1>
-            <h2>Credenciais</h2>
-            {% if error %}
-            <span id="error-msg">Seus credenciais estão incorretos</span>
-            {% endif %}
-            <form id="form-login" action="." method="post">
-                {% csrf_token %}
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Username" required autofocus>
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="Senha" required>
-                <button type="submit">Entrar</button>
-            </form>
+            <div id="login-screen">
+                <h1>LOGIN</h1>
+                {% if error %}
+                <span id="error-msg">Seus credenciais estão incorretos</span>
+                {% endif %}
+                <form id="login-form" action="." method="post">
+                    {% csrf_token %}
+                    <input type="text" id="username" name="username" placeholder="Username" required autofocus>
+                    <input type="password" id="password" name="password" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
         </section>
     </main>
     {% comment %}<a href="{% url 'contas:password_reset'%}">Esqueci minha senha</a>
     <a href="{% url 'contas:cadastrar'%}">Quero me cadastrar</a>{% endcomment %}
 </body>
-{%comment%}<script type="module" src="{% static 'js/functionsUtil.js'%}"></script>
+{%comment%}
 <script type="module" src="{% static 'js/login.js'%}"></script>{%endcomment%}
 </html>

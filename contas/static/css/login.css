@@ -1,26 +1,73 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 main{
     height: 100vh;
     width: 100vw;
-    background-image: url('../images/bg-login-old.jpg');
-    background-attachment: scroll;  
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+h1{
+    font-size: 1.5em;
+}
+
+#bg-image{
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    position: absolute;
+    background-image: url('../images/bg-login-old.jpg');
+    background-attachment: scroll;  
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter:blur(5px);
+}
+
 #container-login{
-    height: 66.6vh;
-    width: 25vw;
+    height: 95vh;
+    width: 35vw;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    
+}
+
+#login-screen{
+    display: flex;
+    flex-direction: column;   
+    padding: 30px 100px ;   
+}
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.input-login input:hover{
+    animation-name: inputAnimation;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+/* Animations */
+@keyframes inputAnimation{
+    from{
+        background-color: white;
+    }
+    to{
+        background-color: green;
+    }
 }
