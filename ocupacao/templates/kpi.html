@@ -2,7 +2,7 @@
 {% load static %}
 {% block head %}
 <link rel="stylesheet" href="{% static '/css/kpi.css'%}">
-{% endblock %}
+{% endblock  %}
 {% load kpi %}
 {% load mathfilters %}
 {% block main %}
@@ -106,7 +106,7 @@
                     <td style="border: 1px solid rgb(168, 168, 168);">                        
                         {{ o|uhPercent}}                        
                     </td>                    
-                  </tr> 
+                  </tr>
                 {% endfor %}
                 <!-- <tr style="border: 1px solid rgb(168, 168, 168);">
                     <td style="border: 1px solid white;" class="bg-light"></td>
@@ -156,4 +156,5 @@
         box-shadow: 2px 4px 4px rgba(51, 50, 50, 0.123);              
     }
 </style>
+<script src="{% static '/js/kpi.js'%}" defer></script>
 {% endblock %}

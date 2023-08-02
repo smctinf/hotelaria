@@ -12,21 +12,18 @@
 <body>
     <main>
         <div id="bg-image"></div>
+        <img src="{% static 'images/logo.png'%}" alt="Logo da PMNF">
         <section id="container-login">
-            <img src="{% static 'images/logo.png'%}" alt="Logo da PMNF">
-            <hr>
-            <div id="login-screen">
-                <h1>LOGIN</h1>
-                {% if error %}
-                <span id="error-msg">Seus credenciais estão incorretos</span>
-                {% endif %}
-                <form id="login-form" action="." method="post">
-                    {% csrf_token %}
-                    <input type="text" id="username" name="username" placeholder="Username" required autofocus>
-                    <input type="password" id="password" name="password" placeholder="Senha" required>
-                    <button type="submit">Entrar</button>
-                </form>
-            </div>
+            <h1>LOGIN</h1>
+            {% if error %}
+            <span id="error-msg">Seus credenciais estão incorretos</span>
+            {% endif %}
+            <form id="login-form" action="." method="post">
+                {% csrf_token %}
+                <input type="text" id="username" name="username" placeholder="Username" required autofocus>
+                <input type="password" id="password" name="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
         </section>
     </main>
     {% comment %}<a href="{% url 'contas:password_reset'%}">Esqueci minha senha</a>

@@ -1,4 +1,4 @@
-import {getCookie} from "./functionsUtil.js";
+/*import {getCookie} from "./functionsUtil.js";
 
 const formLogin = document.querySelector("#form-login");
 const csrftoken = getCookie("csrftoken");
@@ -14,4 +14,4 @@ formLogin.addEventListener("submit" , event =>{
         body:JSON.stringify(dataOfForm),
     }
     fetch("",configMethod)
-});
+});*/
