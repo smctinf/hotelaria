@@ -32,7 +32,7 @@ def kpi(request):
         except Exception as e:
             messages.error(request, 'Erro ao gerar KPI ---> '+str(e))   
             ocupacao=None         
-        # ocupacao=Ocupacao.objects.filter(dt_1__range=[request.POST['dt_inclusao'], request.POST['dt_inclusao_f']])        
+        # ocupacao=Ocupacao.objects.filter(dt_1__range=[request.POST['dt_inclusao'], request.POST['dt_inclusao_f']])   
         context={
             'filtro': True,
             'ocupacoes': ocupacao,

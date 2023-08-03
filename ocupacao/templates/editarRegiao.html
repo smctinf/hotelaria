@@ -7,9 +7,7 @@
         <div class="col d-flex flex-column">
             <div class="row">
                 <div class="col d-flex pt-5">
-                    <a href="{% url 'listagem_regiao' %}" class="btn btn-primary ms-auto">
-                        Voltar
-                    </a>
+                    <a href="{% url 'listagem_regiao' %}" class="btn btn-primary ms-auto">Voltar</a>
                 </div>
             </div>
             {% if messages %} 
@@ -21,7 +19,7 @@
                     </div>                
                 </div>
             </div>
-            {% endfor %}                                                       
+                {% endfor %}                                                       
             {% endif %}        
             <form method="post" class="form col mt-5">
                 {% csrf_token %}

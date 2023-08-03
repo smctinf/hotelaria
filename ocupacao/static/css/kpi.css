@@ -1,0 +1,31 @@
+.kpi{
+    margin: auto;
+    margin-bottom: 20px;
+    height: 100%;
+    width: 100%;
+}
+.kpi-title{
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    vertical-align: center;
+    background-color: rgb(29, 28, 28) !important;
+    border: 1px solid black;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    box-shadow: 2px 4px 4px rgba(51, 50, 50, 0.123);   
+    text-align: center;           
+}
+.kpi-title span{        
+    margin: auto;
+    padding: 15px 0;
+}
+.border{        
+    border-color: rgba(0, 0, 0, 0.096) !important;
+    border-right-color: rgba(65, 64, 64, 0.151) !important;                
+    border-left-color: rgba(80, 79, 79, 0.13) !important;  
+    box-shadow: 2px 4px 4px rgba(51, 50, 50, 0.123);              
+}
+tr td{
+    border: 1px solid rgb(168, 168, 168);
+}

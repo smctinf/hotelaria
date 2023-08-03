@@ -9,12 +9,8 @@
                 <h1>REGIÃO</h1>
               </div>
                 <div class="col d-flex pt-5 pb-4  justify-content-end">                  
-                  <a href="/regiao" class="btn btn-primary me-1">
-                    Cadastrar
-                </a>
-                    <a href="/" class="btn btn-primary">
-                        Voltar
-                    </a>
+                  <a href="{% url 'regiao'%}" class="btn btn-primary me-1">Cadastrar</a>
+                  <a href="/" class="btn btn-primary">Voltar</a>
                 </div>
             </div>
             <div class="row">
@@ -24,9 +20,7 @@
                           <tr>
                             <th scope="col">#</th>                            
                             <th>Região</th>
-                              <th>Editar</th>
-
-                            
+                            <th>Editar</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -34,7 +28,7 @@
                           <tr>
                             <th scope="row">{{l.id}}</th>
                             <td>{{l.nome}}</td>
-                            <td><a  href="{% url 'editar_regiao' l.id %}"><i class="far fa-cog m-auto"></i></a></td>                                                                           
+                            <td><a href="{% url 'editar_regiao' l.id %}"><i class="far fa-cog m-auto"></i></a></td>                                                                           
                           </tr>                          
                         {% endfor %}
                         </tbody>
@@ -43,5 +37,5 @@
             </div>
         </div>
     </div>
-    </div>
+  </div>
 {% endblock %}
