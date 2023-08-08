@@ -1,6 +1,5 @@
 window.onload = () =>{
-    if(corpoTabela)
-        mediaOcupacoes();
+    mediaOcupacoes();
 };
 
 const corpoTabela = document.querySelector("tbody");
@@ -19,7 +18,8 @@ const mediaOcupacoes = () =>{
         media += tdOcupacao;
     }
     media /= QntOcupacoes;
-    montarTrMedia(media);
+    if(corpoTabela.firstElementChild)
+        montarTrMedia(media);
 };
 
 const montarTrMedia = media => {

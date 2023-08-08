@@ -1,17 +1,13 @@
-/*import {getCookie} from "./functionsUtil.js";
-
-const formLogin = document.querySelector("#form-login");
-const csrftoken = getCookie("csrftoken");
-
-formLogin.addEventListener("submit" , event =>{
-    event.preventDefault();
-    const dataOfForm = {"username":formLogin.querySelector("#username").value,
-                        "password":formLogin.querySelector("#password").value};
-
-    const configMethod = {
-        method: "POST",
-        headers: {"X-CSRFToken": csrftoken},
-        body:JSON.stringify(dataOfForm),
+window.onload = () =>{
+    const errorMsg = document.querySelector("#error-msg");
+    if(errorMsg){
+        const loginForm = document.querySelector("#login-form");
+        const amountElements = loginForm.children.length;
+        for(let i = 0; i < amountElements; i++){
+            let element = loginForm.children[i];
+            if(element.tagName == "INPUT" && element.type != "hidden"){
+                element.classList.add("error-values");
+            }
+        }
     }
-    fetch("",configMethod)
-});*/
+}

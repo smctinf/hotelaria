@@ -4,8 +4,11 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon">
+    <!-- CUSTOM CSS AND JS-->
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <script type="module" src="{% static 'js/login.js'%}" defer></script>
     <title>Login</title>
 </head>
 
@@ -20,8 +23,10 @@
             {% endif %}
             <form id="login-form" action="." method="post">
                 {% csrf_token %}
-                <input type="text" id="username" name="username" placeholder="Username" required autofocus>
-                <input type="password" id="password" name="password" placeholder="Senha" required>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Username" autocomplete="off" required autofocus>
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Senha" autocomplete="off" required>
                 <button type="submit">Entrar</button>
             </form>
         </section>
@@ -29,6 +34,4 @@
     {% comment %}<a href="{% url 'contas:password_reset'%}">Esqueci minha senha</a>
     <a href="{% url 'contas:cadastrar'%}">Quero me cadastrar</a>{% endcomment %}
 </body>
-{%comment%}
-<script type="module" src="{% static 'js/login.js'%}"></script>{%endcomment%}
 </html>

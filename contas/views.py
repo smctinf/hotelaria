@@ -23,5 +23,5 @@ def login_view(request):
 def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
-        return render(request, 'auth/login.html')
-    return redirect('auth/login')    
+        return redirect('/')
+    return redirect('/')    
